@@ -96,6 +96,8 @@ console.log(x); //5
 
 ### 面试题
 
-**var、let 和 const 区别的实现原理是什么**
+- var、let 和 const 区别的实现原理是什么https://muyiy.cn/question/js/83.html
 
-https://muyiy.cn/question/js/83.html
+- let const 特点
+- 块级作用域
+- 暂时性死区
