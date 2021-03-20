@@ -97,3 +97,5 @@ import()类似于 Node 的 require 方法，区别主要是前者是异步加载
 ##### js 的编译时与运行时
 
 ##### export 和 export defalut 的区别
+
+##### import 命令、import()、require()的区别
