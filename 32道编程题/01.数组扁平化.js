@@ -46,3 +46,19 @@ console.log(
     .split(",")
     .map((item) => Number(item))
 );
+// 3、generator
+const iterRes = [];
+function* iterflatten(arr) {
+  if (Array.isArray(arr)) {
+    for (let i = 0; i < arr.length; i++) {
+      yield* iterflatten(arr[i]);
+    }
+  } else {
+    yield arr;
+  }
+}
+// for (let x of iterflatten(arr)) {
+//   iterRes.push(x);
+// }
+// console.log(iterRes);
+console.log([...iterflatten(arr)]);
