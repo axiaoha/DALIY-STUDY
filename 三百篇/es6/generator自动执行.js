@@ -95,5 +95,32 @@
 
 // 回调函数
 function fetchData(url) {
-  return function (cb) {};
+  return function (cb) {
+    setTimeout(function () {
+      cb({ status: 200, data: url });
+    }, 1000);
+  };
 }
+function* gen() {
+  var r1 = yield fetchData("https://api.github.com/users/github");
+  var r2 = yield fetchData("https://api.github.com/users/github/followers");
+  console.log([r1.data, r2.data].join("\n"));
+}
+// var g = gen();
+// var r1 = g.next();
+// r1.value(function (data) {
+//   var r2 = g.next(data);
+//   r2.value(function (data) {
+//     g.next(data);
+//   });
+// });
+function run(gen) {
+  var g = gen();
+  function next(data) {
+    var res = g.next(data);
+    if (res.done) return;
+    res.value(next);
+  }
+  next();
+}
+run(gen);
