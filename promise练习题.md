@@ -1,5 +1,5 @@
-- [ ] Promise的几道基础题
-- [ ] Promise结合setTimeout
+- [x] Promise的几道基础题
+- [x] Promise结合setTimeout
 - [ ] Promise中的then、catch、finally
 - [ ] Promise中的all和race
 - [ ] async/await的几道题
